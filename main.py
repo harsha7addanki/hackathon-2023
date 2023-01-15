@@ -16,7 +16,7 @@ import numpy as np
 
 
 app = QApplication([])
-nextwin = MainWindow(thedata=thedata)
+nextwin = QMainWindow(thedata=thedata)
 class MainWindow(QMainWindow):
     def __init__(self,thedata) -> None:
         super().__init__()
