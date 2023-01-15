@@ -18,7 +18,7 @@ import numpy as np
 app = QApplication([])
 
 class MainWindow(QMainWindow):
-    def __init__(self) -> None:
+    def __init__(thedata) -> None:
         super().__init__()
         #im kinda stupid so i'm gonna just keep it like that(For Now)
         self.setWindowTitle("Database viewer")
@@ -35,7 +35,7 @@ class MainWindow(QMainWindow):
         while i < 10:
             j = 0
             while j < 10:
-                gridLayout.addWidget(QLineEdit(f"{i}, {j}"), i, j)
+                gridLayout.addWidget(QLineEdit(f"{thedata[i][j]}"), i, j)
                 j+=1
             i+=1
         
@@ -66,7 +66,7 @@ class MainMenu(QMainWindow):
         if fileDialog.exec() == QFileDialog.Accepted:
             fileName = fileDialog.selectedFiles()[0]
             print(fileName)
-            self.fileName = fileName
+            thedata = np.loadtxt
 
     def __init__(self) -> None:
         super().__init__()
