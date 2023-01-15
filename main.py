@@ -66,7 +66,11 @@ class MainMenu(QMainWindow):
         if fileDialog.exec() == QFileDialog.Accepted:
             fileName = fileDialog.selectedFiles()[0]
             print(fileName)
-            thedata = np.loadtxt
+            thedata = np.loadtxt(fileName, delimiter=",", dtype=str)
+            self.setVisible(false)
+            nextwin = MainWindow(thedata)
+            nextwin.show()
+
 
     def __init__(self) -> None:
         super().__init__()
