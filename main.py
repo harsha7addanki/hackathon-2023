@@ -32,9 +32,9 @@ class MainWindow(QMainWindow):
         gridWidget.setLayout(gridLayout)
         # And then we need a label in the grid layout for the title
         i = 0
-        while i < 10:
+        while i < thedata.shape[1]:
             j = 0
-            while j < 10:
+            while j < thedata.shape[0]:
                 gridLayout.addWidget(QLineEdit(f"{thedata[i][j]}"), i, j)
                 j+=1
             i+=1
