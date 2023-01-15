@@ -16,7 +16,7 @@ import numpy as np
  
  
 app = QApplication([])
-nextwin = QMainWindow(thedata=thedata)
+
 class MainWindow(QMainWindow):
     def __init__(self,thedata) -> None:
         super().__init__()
@@ -68,7 +68,7 @@ class MainMenu(QMainWindow):
             print(fileName)
             thedata = np.loadtxt(fileName, delimiter=",", dtype=str)
             self.setVisible(False)
-           
+            nextwin = MainWindow(thedata=thedata)
             nextwin.show()
  
     def __init__(self) -> None:
