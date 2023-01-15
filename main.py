@@ -35,7 +35,7 @@ class MainWindow(QMainWindow):
         while i < thedata.shape[1]:
             j = 0
             while j < thedata.shape[0]:
-                gridLayout.addWidget(QLineEdit(f"{thedata[i][j]}"), i, j)
+                gridLayout.addWidget(QLineEdit(f"{thedata[i-1][j-1]}"), i, j)
                 j+=1
             i+=1
         
