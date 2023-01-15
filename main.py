@@ -68,7 +68,7 @@ class MainMenu(QMainWindow):
             print(fileName)
             thedata = np.loadtxt(fileName, delimiter=",", dtype=str)
             self.setVisible(False)
-            nextwin = MainWindow(thedata)
+            nextwin = MainWindow(thedata=thedata)
             nextwin.show()
 
 
