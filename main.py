@@ -18,8 +18,11 @@ import numpy as np
 app = QApplication([])
 
 class MainWindow(QMainWindow):
-    def __init__(self,thedata) -> None:
+    def setData(self,thedata):
+        self.thedata = thedata
+    def __init__(self) -> None:
         super().__init__()
+        thedata = self.thedata
         #im kinda stupid so i'm gonna just keep it like that(For Now)
         self.setWindowTitle("Database viewer")
         # Soo for a database app we need a verticaL with a grid layout in it
@@ -51,7 +54,8 @@ class MainWindow(QMainWindow):
         RENDER_WIDGET.setLayout(layout)
         self.setCentralWidget(RENDER_WIDGET)
  
- 
+nextwin = MainWindow()
+
 class MainMenu(QMainWindow):
  
     def openFile(self) -> None:
@@ -68,7 +72,7 @@ class MainMenu(QMainWindow):
             print(fileName)
             thedata = np.loadtxt(fileName, delimiter=",", dtype=str)
             self.setVisible(False)
-            nextwin = MainWindow(thedata=thedata)
+            nextwin.setData(thedata=thedata)
             nextwin.show()
  
     def __init__(self) -> None:
