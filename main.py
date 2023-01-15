@@ -18,7 +18,7 @@ import numpy as np
 app = QApplication([])
 
 class MainWindow(QMainWindow):
-    def __init__(thedata) -> None:
+    def __init__(self,thedata) -> None:
         super().__init__()
         #im kinda stupid so i'm gonna just keep it like that(For Now)
         self.setWindowTitle("Database viewer")
