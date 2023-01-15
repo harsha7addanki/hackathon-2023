@@ -11,10 +11,7 @@ from PySide6.QtWidgets import (
 )
 import os
 import numpy as np
-#from .aigenerator import *
- 
- 
- 
+
 app = QApplication([])
 
 class MainWindow(QMainWindow):
@@ -27,9 +24,9 @@ class MainWindow(QMainWindow):
         gridLayout = QGridLayout()
         gridWidget.setLayout(gridLayout)
         
-        for i in range(thedata.shape[1]):
-            for j in range(thedata.shape[0]):
-                gridLayout.addWidget(QLineEdit(f"{thedata[j][i]}"), i, j)
+        for i in range(thedata.shape[0]):
+            for j in range(thedata.shape[1]):
+                gridLayout.addWidget(QLineEdit(f"{thedata[i][j]}"), i, j)
         
         layout.addWidget(gridWidget)
         RENDER_WIDGET = QWidget()
@@ -69,4 +66,4 @@ class MainMenu(QMainWindow):
  
 menu = MainMenu()
 menu.show()
-app.exec_()
+app.exec()
